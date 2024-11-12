@@ -1,0 +1,136 @@
+<form [formGroup]="ventasForm">
+  <div class="grid gap-5 p-5">
+    <div>
+      <div class="grid grid-cols-3 gap-5">
+        <!-- Nombre del Cliente -->
+        <div>
+          <label class="block mb-2 text-sm font-medium text-blue-800">Nombre del Cliente</label>
+          <input
+            type="text"
+            id="name"
+            formControlName="name"
+            class="bg-blue-50 border border-blue-300 text-blue-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full p-2.5"
+            required
+          />
+        </div>
+
+        <!-- Dirección Completa -->
+        <div>
+          <label class="block mb-2 text-sm font-medium text-blue-800">Dirección Completa</label>
+          <input
+            type="text"
+            id="direccion"
+            formControlName="direccion"
+            class="bg-blue-50 border border-blue-300 text-blue-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full p-2.5"
+            required
+          />
+        </div>
+
+        <!-- Teléfono de Contacto -->
+        <div>
+          <label class="block mb-2 text-sm font-medium text-blue-800">Teléfono de Contacto</label>
+          <input
+            type="text"
+            id="telefono"
+            formControlName="telefono"
+            class="bg-blue-50 border border-blue-300 text-blue-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full p-2.5"
+            required
+          />
+        </div>
+
+        <!-- Seleccionar Tamaño de Pizza -->
+        <div class="mt-6 border-2 border-dashed border-blue-300 p-4">
+          <label class="text-blue-600">Selecciona el Tamaño</label>
+          <div class="flex items-center mb-4">
+            <input
+              id="country-option-1"
+              type="radio"
+              formControlName="pizzaSize"
+              value="Chica"
+              class="w-4 h-4 border-blue-300 focus:ring-2 focus:ring-blue-300"
+            />
+            <label for="country-option-1" class="ml-2 text-sm font-medium text-blue-800">Chica $40</label>
+          </div>
+          <div class="flex items-center mb-4">
+            <input
+              id="country-option-2"
+              type="radio"
+              formControlName="pizzaSize"
+              value="Mediana"
+              class="w-4 h-4 border-blue-300 focus:ring-2 focus:ring-blue-300"
+            />
+            <label for="country-option-2" class="ml-2 text-sm font-medium text-blue-800">Mediana $80</label>
+          </div>
+          <div class="flex items-center mb-4">
+            <input
+              id="country-option-3"
+              type="radio"
+              formControlName="pizzaSize"
+              value="Grande"
+              class="w-4 h-4 border-blue-300 focus:ring-2 focus:ring-blue-300"
+            />
+            <label for="country-option-3" class="ml-2 text-sm font-medium text-blue-800">Grande $120</label>
+          </div>
+        </div>
+
+        <!-- Selección de Ingredientes -->
+        <div formGroupName="ingredientes" class="mt-6 border-2 border-dashed border-blue-300 p-4">
+          <label class="text-blue-600">Ingredientes Adicionales</label>
+          <div class="flex items-center mb-4">
+            <input
+              id="ingrediente-jamon"
+              type="checkbox"
+              formControlName="jamon"
+            />
+            <label for="ingrediente-jamon" class="ml-2 text-sm font-medium text-blue-800">Jamón $10</label>
+          </div>
+          <div class="flex items-center mb-4">
+            <input
+              id="ingrediente-pina"
+              type="checkbox"
+              formControlName="pina"
+            />
+            <label for="ingrediente-pina" class="ml-2 text-sm font-medium text-blue-800">Piña $10</label>
+          </div>
+          <div class="flex items-center mb-4">
+            <input
+              id="ingrediente-champinones"
+              type="checkbox"
+              formControlName="champinones"
+            />
+            <label for="ingrediente-champinones" class="ml-2 text-sm font-medium text-blue-800">Champiñones $10</label>
+          </div>
+        </div>
+
+        <!-- Número de Pizzas y Fecha de Orden -->
+        <div class="mt-6">
+          <div>
+            <label class="block mb-2 text-sm font-medium text-blue-800">Cantidad de Pizzas</label>
+            <input
+              type="text"
+              formControlName="cantidad"
+              class="bg-blue-50 border border-blue-300 text-blue-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-3/5 p-2.5"
+              required
+            />
+          </div>
+          <div>
+            <label class="block mb-2 text-sm font-medium text-blue-800">Fecha de Orden</label>
+            <input
+              type="date"
+              formControlName="fecha"
+              class="bg-blue-50 border border-blue-300 text-blue-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-3/5 p-2.5"
+              required
+            />
+          </div>
+          <button
+            type="button"
+            (click)="agregarPedido()"
+            class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mt-5"
+          >
+            Agregar Pedido
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
